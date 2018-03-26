@@ -1,0 +1,91 @@
+.ct-adc-importer {
+  .disabled-wrap label {
+    position: absolute;
+    z-index: -9999;
+  }
+  .webuploader-container {
+    div:nth-child(1) {
+      //固定尺寸后不用调用refresh刷新
+      width: 90px;
+      height: 30px;
+    }
+  }
+  .webuploader-element-invisible {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+  .webuploader-pick {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    background: #00b7ee;
+    padding: 5px 10px;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 0;
+    font-weight: normal;
+    vertical-align: middle;
+    touch-action: manipulation;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    -ms-touch-action: manipulation;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    .glyphicon {
+      margin-right: 5px;
+    }
+  }
+  .webuploader-pick-hover {
+    background: #00a2d4;
+  }
+  .webuploader-pick-disable {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    li {
+      line-height: 30px;
+      position: relative;
+      padding: 0 5px;
+      margin-top: 5px;
+      border-radius: 2px;
+      cursor: pointer;
+      span {
+        line-height: 30px;
+        &.glyphicon-file {
+          margin-right: 10px;
+        }
+        &.glyphicon-remove-circle, &.glyphicon-ok-circle {
+          font-size: 14px;
+        }
+        &.glyphicon-remove, &.glyphicon-remove-circle, &.glyphicon-ok-circle, &.glyphicon-hourglass, &.glyphicon-refresh {
+          position: absolute;
+          right: 5px;
+        }
+        &.glyphicon-remove {
+          display: none;
+        }
+      }
+      &:hover {
+        background: #f4f4f4;
+        .glyphicon-remove {
+          display: block;
+        }
+        .glyphicon-remove-circle, .glyphicon-ok-circle, .glyphicon-hourglass, &.glyphicon-refresh {
+          display: none;
+        }
+      }
+    }
+  }
+}

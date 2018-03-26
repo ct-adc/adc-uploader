@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>list</title>
+    <link href="http://static.uc108.com/cdn/bootstrap/3.3.7/custom/1.0.2/css/bootstrap.min.css" rel="stylesheet">
+    <style rel="stylesheet">
+        p{
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app" class="mt10" style="margin-left:20px">
+    <div class="row">
+        <div class="col-sm-3" style="display:none">
+            <uploader ref="uploader"
+                      type="file"
+                      :button-text="buttonText"
+                      :accept="accept"
+                      :auto="auto"
+                      :chunked="chunked"
+                      :chunk-size="chunkSize"
+                      :chunk-retry="chunkRetry"
+                      :compress="compress"
+                      :disabled="disabled"
+                      :duplicate="duplicate"
+                      :file-num-limit="fileNumLimit"
+                      :files="files"
+                      :file-single-size-limit="fileSingleSizeLimit"
+                      :file-size-limit="fileSizeLimit"
+                      :form-data="formData"
+                      :file-val="fileVal"
+                      :headers="headers"
+                      :method="method"
+                      :multiple="multiple"
+                      :result-filter="resultFilter"
+                      :send-as-binary="sendAsBinary"
+                      :server="server"
+                      :threads="threads"
+                      :tip="tip"
+                      @runtime-error="error"
+                      @runtime-success="success"
+                      @delete="deleteFile"
+                      @change-status="change"></uploader>
+        </div>
+        <div class="col-sm-1" v-if="!auto">
+          <button class="btn btn-primary btn-sm" @click="upload">手动开始上传</button>
+        </div>
+    </div>
+    <div class="mt10">
+        <div class="col-sm-2">
+            <button type="button" class="btn btn-default" @click="changeFiles">改变files</button>
+            <p>
+                files: {{files}}
+            </p>
+        </div>
+        <div class="col-sm-2">
+            <button type="button" class="btn btn-primary" @click="changeResultFilter">改变resultFilter</button><br>
+            <p>
+                resultFilter: {{resultFilter}}
+            </p>
+            <button type="button" class="btn btn-primary" @click="changeFormData">改变formData</button><br>
+            <p>
+                formData: {{formData}}
+            </p>
+            <button type="button" class="btn btn-primary" @click="changeHeaders">改变Headers</button><br>
+            <p>
+                headers: {{headers}}
+            </p>
+        </div>
+        <div class="col-sm-2">
+            <button type="button" class="btn btn-warning" @click="changeServer">改变server</button><br>
+            <p>
+                server: {{server}}
+            </p>
+            <button type="button" class="btn btn-warning" @click="changeMethod">改变请求方式为get</button><br>
+            <p>
+                method: {{method}}
+            </p>
+            <button type="button" class="btn btn-warning" @click="changeDuplicate">改变duplicate</button><br>
+            <p>
+                duplicate: {{duplicate}}
+            </p>
+            <button type="button" class="btn btn-warning" @click="changeAccept">改变文件类型限制</button><br>
+            <p>
+                accept: {{accept}}
+            </p>
+            <button type="button" class="btn btn-warning" @click="changeCompress">改变compress</button><br>
+            <p>
+                compress: {{compress}}
+            </p>
+            <button type="button" class="btn btn-warning" @click="changeFileSingleSizeLimit">改变单个文件大小</button><br>
+            <p>
+                fileSingleSizeLimit: {{fileSingleSizeLimit}}
+            </p>
+        </div>
+        <div class="col-sm-2">
+            <button type="button" class="btn btn-warning" @click="changeFileNumLimit">改变文件数量限制</button><br>
+            <p>
+                fileNumLimit: {{fileNumLimit}}
+            </p>
+            <button type="button" class="btn btn-warning" @click="changeMultiple">改变multiple</button><br>
+            <p>
+                multiple: {{multiple}}
+            </p>
+            <button type="button" class="btn btn-warning" @click="changeAuto">改变上传方式（自动/手动）</button><br>
+            <p>
+                auto: {{auto}}
+            </p>
+            <button type="button" class="btn btn-warning" @click="changeChunked">改变分片配置</button><br>
+            <p>
+                chunked: {{chunked}}
+            </p>
+            <button type="button" class="btn btn-warning" @click="changeChunkSize">改变分片配置</button><br>
+            <p>
+                chunkSize: {{chunkSize}}
+            </p>
+            <button type="button" class="btn btn-warning" @click="changeChunkRetry">改变分片配置</button><br>
+            <p>
+                chunkRetry: {{chunkRetry}}
+            </p>
+            <button type="button" class="btn btn-warning" @click="changeFileSizeLimit">改变文件大小限制</button>
+            <p>
+                fileSizeLimit: {{fileSizeLimit}}
+            </p>
+            <button type="button" class="btn btn-warning" @click="changeFileVal">改变文件上传key</button>
+            <p>
+                fileVal: {{fileVal}}
+            </p>
+        </div>
+        <div class="col-sm-2">
+            <button type="button" class="btn btn-warning" @click="changeSendAsBinary">改变sendAsBinary</button><br>
+            <p>
+                sendAsBinary: {{sendAsBinary}}
+            </p>
+            <button type="button" class="btn btn-warning" @click="changeThreads">改变threads</button><br>
+            <p>
+                threads: {{threads}}
+            </p>
+            <button type="button" class="btn btn-warning" @click="changeDisabled">改变上传按钮disable状态</button><br>
+            <p>
+                disabled: {{disabled}}
+            </p>
+            <button type="button" class="btn btn-warning mb10" @click="changeTip">改变tip值</button><br>
+            <button type="button" class="btn btn-warning" @click="resetTip">置空tip</button><br>
+            <p>
+                tip: {{tip}}
+            </p>
+            <button type="button" class="btn btn-warning" @click="changeBtnText">改变按钮文字</button><br>
+            <p>
+                buttonText: {{buttonText}}
+            </p>
+        </div>
+        <div class="col-sm-2">
+            <p>
+                <button type="button" class="btn btn-sm btn-success mb10" @click="getUrls">获取图片地址列表</button><br>
+                <button type="button" class="btn btn-sm btn-success mb10" @click="getUploadedFiles">获取已上传的图片列表</button><br>
+                <button type="button" class="btn btn-sm btn-success mb10" @click="getPendingFiles">获取正在上传的图片列表</button><br>
+                <button type="button" class="btn btn-sm btn-success mb10" @click="getErrorFiles">获取上传错误的图片列表</button><br>
+            </p>
+            <p>
+                <button type="button" class="btn btn-sm btn-primary mb10" @click="isPending">当前是否有图片正在上传</button><br>
+            </p>
+            <p>
+                <button type="button" class="btn btn-sm btn-info mb10" @click="refreshUploader">刷新图片上传组件</button><br>
+                <button type="button" class="btn btn-sm btn-info mb10" @click="resetUploader">重置图片上传组件对象</button><br>
+                <button type="button" class="btn btn-sm btn-info mb10" @click="cancelUpload">取消正在上传的图片</button>
+            </p>
+        </div>
+    </div>
+
+</div>
+<script src="http://static.uc108.com/cdn/jquery/2.1.0/jquery.js"></script>
+<script src="http://static.uc108.com/cdn/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="http://static.uc108.com/cdn/webuploader/0.1.6/webuploader.html5only.min.js"></script>
+<%= htmlWebpackPlugin.options.script %>
+</body>
+</html>
