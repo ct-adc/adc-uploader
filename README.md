@@ -45,12 +45,12 @@ Uploader
 
 参数|说明|类型|默认值 | 可选值 | 描述 |
 --- | --- | --- | --- | --- | ---- |
-accept[详细说明](propsaccept) | 上传文件类型限制 | Object | null | object/null | 设置允许上传的图片的格式
+accept[详细说明](#propsaccept) | 上传文件类型限制 | Object | null | object/null | 设置允许上传的图片的格式
 auto | 是否自动上传文件 | Boolean | false | true/false | 上传方式为自动还是手动
 chunked | 是否分片上传文件 | Boolean | false | true/false |
 chunkSize | 分片大小 | Number | 5242880 即5M | 数字 | 如果要分片，分多大一片？ 默认大小为5M. 单位: Byte
 chunkRetry | 分片重传 | Number | 2 | 整数 | 如果某个分片由于网络问题出错，允许自动重传多少次
-compress[详细说明](propscompress) | 是否压缩图片 | Object/Boolean | false | false或object(压缩选项) | 上传前是否压缩图片false
+compress[详细说明](#propscompress) | 是否压缩图片 | Object/Boolean | false | false或object(压缩选项) | 上传前是否压缩图片false
 disabled | 是否禁用组件 | Boolean | false | true/false | 是否禁用组件
 duplicate | 是否可重复上传 | Boolean | false | true/false | 是否允许同样的图片上传两张
 fileNumLimit | 可上传文件数量 | Number | 5 | 整数 | 最多可上传几个文件
