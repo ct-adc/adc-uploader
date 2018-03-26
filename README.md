@@ -333,13 +333,13 @@ RESET 重置错误消息，即清空实时错误，表示实时错误已不能�
 
 以下为不同的code对应的提示信息:
 
-Q_EXCEED_NUM_LIMIT // '文件数量超出限制!'
-Q_EXCEED_SIZE_LIMIT // '文件总大小超出限制!'
-Q_TYPE_DENIED // '文件类型不正确!'
-F_EXCEED_SIZE // '文件大小超出限制!'
-F_DUPLICATE // '文件重复!'
-HTTP_ERROR // 'http-状态码' 如'http-404'
-RESET // ''
+* Q_EXCEED_NUM_LIMIT // '文件数量超出限制!'
+* Q_EXCEED_SIZE_LIMIT // '文件总大小超出限制!'
+* Q_TYPE_DENIED // '文件类型不正确!'
+* F_EXCEED_SIZE // '文件大小超出限制!'
+* F_DUPLICATE // '文件重复!'
+* HTTP_ERROR // 'http-状态码' 如'http-404'
+* RESET // ''
 
 ## 其他
 
