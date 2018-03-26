@@ -1,15 +1,11 @@
-#
-# ct-adc-uploader
+## ct-adc-uploader
 
 上传组件。支持图片/文件
 
-## 组件示例图
-
-[!img](图片地址)
 
 ## 在线demo
 
-[在线demo]({在线demo地址})
+[在线demo](https://codepen.io/rubyisapm/pen/BrwVZo)
 
 ## 功能点
 
