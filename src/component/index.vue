@@ -6,13 +6,13 @@
                     :style="{width:thumbnailWidth+'px',height:thumbnailHeight+'px'}">
                     <img :src="thumb.previewSrc"/>
 
-                    <div class="thumbInfo text-center pending" v-if="isPendingImg(thumb.status)">
+                    <div class="thumbInfo text-center pending" v-if="isPendingFile(thumb.status)">
                         <span class="glyphicon glyphicon-refresh rotate"></span>
                     </div>
-                    <div class="thumbInfo text-center success" v-if="isCompleteImg(thumb.status)">
+                    <div class="thumbInfo text-center success" v-if="isCompleteFile(thumb.status)">
                         <span class="glyphicon glyphicon-ok"></span>
                     </div>
-                    <div class="thumbInfo text-center error" v-if="isErrorImg(thumb.status)">
+                    <div class="thumbInfo text-center error" v-if="isErrorFile(thumb.status)">
                         <span class="glyphicon glyphicon-remove"></span>
                     </div>
                     <div class="file-panel">
@@ -69,7 +69,7 @@
                 <span class="title">{{ buttonText }}</span>
             </div>
             <ul class="list text-muted">
-                <li v-for="(item, index) in fileList">
+                <li v-for="(item, index) in fileList" :title="item.name">
                     <span class="glyphicon glyphicon-file"></span>
                     {{item.name}}
                     <span v-if="item.status === ''" class="glyphicon glyphicon-hourglass"></span>

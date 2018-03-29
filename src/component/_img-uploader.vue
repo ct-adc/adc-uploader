@@ -5,13 +5,13 @@
                 :style="{width:thumbnailWidth+'px',height:thumbnailHeight+'px'}">
                 <img :src="thumb.previewSrc"/>
 
-                <div class="thumbInfo text-center pending" v-if="isPendingImg(thumb.status)">
+                <div class="thumbInfo text-center pending" v-if="isPendingFile(thumb.status)">
                     <span class="glyphicon glyphicon-refresh rotate"></span>
                 </div>
-                <div class="thumbInfo text-center success" v-if="isCompleteImg(thumb.status)">
+                <div class="thumbInfo text-center success" v-if="isCompleteFile(thumb.status)">
                     <span class="glyphicon glyphicon-ok"></span>
                 </div>
-                <div class="thumbInfo text-center error" v-if="isErrorImg(thumb.status)">
+                <div class="thumbInfo text-center error" v-if="isErrorFile(thumb.status)">
                     <span class="glyphicon glyphicon-remove"></span>
                 </div>
                 <div class="file-panel">

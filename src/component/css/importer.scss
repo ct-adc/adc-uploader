@@ -61,6 +61,10 @@
       margin-top: 5px;
       border-radius: 2px;
       cursor: pointer;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      padding-right: 30px;
       span {
         line-height: 30px;
         &.glyphicon-file {
