@@ -70,10 +70,16 @@ new Vue({
         },
         sendAsBinary: false,
         server: '/api/common/uploadpic',
-        threads: 3
+        threads: 3,
+        show: false
     },
     components: {
         Uploader
+    },
+    mounted(){
+        // setTimeout(()=>{
+        //     this.show = true;
+        // }, 5000);
     },
     methods: {
         /*****改变属性****/

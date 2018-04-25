@@ -29,8 +29,8 @@ export default {
                 const element = this.$refs.root.querySelector('.webuploader-element-invisible');
 
                 if(element !== null){
-                    element.style.width = this.thumbnailWidth + 'px';
-                    element.style.height = this.thumbnailHeight + 'px';
+                    element.parentNode.style.width = this.thumbnailWidth + 'px';
+                    element.parentNode.style.height = this.thumbnailHeight + 'px';
                 }
             }
         });

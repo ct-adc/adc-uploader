@@ -142,7 +142,7 @@ export default{
 
                 // 为空的话则保留原有图片格式。
                 // 否则强制转换成指定的类型。
-                type: 'image/jpeg'
+                type: ''
             };
         }
     },

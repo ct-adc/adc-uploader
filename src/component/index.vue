@@ -17,7 +17,7 @@
                     </div>
                     <div class="file-panel">
                         <div>
-                            <span class="glyphicon glyphicon-search" @click="preview(index)"></span>
+                            <span class="glyphicon glyphicon-search" @click="preview(index)" v-if="hasPreview"></span>
                             <span class="glyphicon glyphicon-trash" @click="removeFile(index)"></span>
                         </div>
                     </div>

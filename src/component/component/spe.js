@@ -25,6 +25,10 @@ export default{
         buttonText: {
             type: String,
             default: '导入文件'
+        },
+        hasPreview: {
+            type: Boolean,
+            default: false
         }
     },
     computed: {
