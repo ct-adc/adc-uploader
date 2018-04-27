@@ -385,7 +385,7 @@ runtime-error的参数为一个信息对象，该对象包含两个属性，分�
 
 ## 更新日志
 
-[更新日志]({CHANGELOG.md的线上地址})
+[更新日志](https://github.com/ct-adc/adc-uploader/blob/master/CHANGELOG.md)
 
 ## 外部资源依赖列表
 
