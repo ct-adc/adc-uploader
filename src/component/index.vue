@@ -28,7 +28,7 @@
                     <span class="glyphicon glyphicon-plus"></span>
                 </li>
             </ul>
-            <div class="modal fade" ref="modal" v-if="fileList.length > 0">
+            <div class="modal fade" ref="modal" v-if="hasPreview && fileList.length > 0">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">

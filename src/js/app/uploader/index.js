@@ -71,15 +71,15 @@ new Vue({
         sendAsBinary: false,
         server: '/api/common/uploadpic',
         threads: 3,
-        show: false
+        hasPreview: false
     },
     components: {
         Uploader
     },
     mounted(){
-        // setTimeout(()=>{
-        //     this.show = true;
-        // }, 5000);
+        setTimeout(()=>{
+            this.hasPreview = true;
+        }, 5000);
     },
     methods: {
         /*****改变属性****/

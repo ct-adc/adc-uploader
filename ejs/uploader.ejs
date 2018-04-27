@@ -16,7 +16,6 @@
     <div class="row">
         <div class="col-sm-3">
             <uploader ref="uploader"
-                        v-show="show"
                       type="img"
                       :button-text="buttonText"
                       :accept="accept"
@@ -42,6 +41,7 @@
                       :threads="threads"
                       :tip="tip"
                       :thumb="thumb"
+                      :has-preview="hasPreview"
                       @runtime-error="error"
                       @runtime-success="success"
                       @delete="deleteFile"

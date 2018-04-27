@@ -4,6 +4,7 @@ import utility from 'ct-utility';
 new Vue({
     el: '#app',
     data: {
+        show: false,
         //importer特有属性
         buttonText: '上传文件',
         //组件公用的属性
@@ -55,6 +56,11 @@ new Vue({
     },
     components: {
         Uploader
+    },
+    mounted(){
+        setTimeout(()=>{
+            this.show = true;
+        }, 5000);
     },
     methods: {
         /*****改变属性****/
