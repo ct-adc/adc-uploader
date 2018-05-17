@@ -15,7 +15,7 @@
 <div id="app" class="mt10" style="margin-left:20px">
     <div class="row">
         <div class="col-sm-3">
-            <uploader ref="uploader"
+            <uploader v-show="show" ref="uploader"
                       type="img"
                       :button-text="buttonText"
                       :accept="accept"

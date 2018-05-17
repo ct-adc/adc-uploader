@@ -45,11 +45,11 @@ new Vue({
                 status: false,
                 path: '',
                 msg: res.message
-            }
+            };
         },
         tip: {
             message: '错误提示',
-            direction: 'bottom',
+            direction: 'bottom'
         },
         thumb: {
             // width: 110,
@@ -71,7 +71,8 @@ new Vue({
         sendAsBinary: false,
         server: '/api/common/uploadpic',
         threads: 3,
-        hasPreview: false
+        hasPreview: false,
+        show: false
     },
     components: {
         Uploader
@@ -79,6 +80,7 @@ new Vue({
     mounted(){
         setTimeout(()=>{
             this.hasPreview = true;
+            this.show = true;
         }, 5000);
     },
     methods: {

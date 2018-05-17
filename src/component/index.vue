@@ -88,7 +88,7 @@
     export default{
         name: 'ct-adc-uploader',
         mixins: [spec, mixin]
-    }
+    };
 </script>
 <style lang="scss">
     .ct-adc-uploader-wrap{
