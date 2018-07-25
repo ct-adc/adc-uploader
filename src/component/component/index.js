@@ -23,28 +23,28 @@ export default {
     mounted(){
         //初始化上传组件
         this.initUploader();
-        let i;
-        const initImgUploaderSize = ()=>{
-            //如果是图片组件，且root存在，那么手动设置上传按钮区域设置为缩略图大小
-            const element = this.$refs.root.querySelector('.webuploader-element-invisible');
+        // let i;
+        // const initImgUploaderSize = ()=>{
+        //     //如果是图片组件，且root存在，那么手动设置上传按钮区域设置为缩略图大小
+        //     const element = this.$refs.root.querySelector('.webuploader-element-invisible');
 
-            if (element !== null){
-                clearTimeout(i);
-                element.parentNode.style.width = this.thumbnailWidth + 'px';
-                element.parentNode.style.height = this.thumbnailHeight + 'px';
-            } else {
-                i = setTimeout(()=>{
-                    initImgUploaderSize();
-                });
-            }
-        };
+        //     if (element !== null){
+        //         clearTimeout(i);
+        //         element.parentNode.style.width = this.thumbnailWidth + 'px';
+        //         element.parentNode.style.height = this.thumbnailHeight + 'px';
+        //     } else {
+        //         i = setTimeout(()=>{
+        //             initImgUploaderSize();
+        //         });
+        //     }
+        // };
 
-        i = setTimeout(()=> {
-            //如果是图片组件，且root存在，那么手动设置上传按钮区域设置为缩略图大小
-            if (this.type === 'img' && typeof this.$refs.root !== 'undefined'){
-                initImgUploaderSize();
-            }
-        });
+        // i = setTimeout(()=> {
+        //     //如果是图片组件，且root存在，那么手动设置上传按钮区域设置为缩略图大小
+        //     if (this.type === 'img' && typeof this.$refs.root !== 'undefined'){
+        //         // initImgUploaderSize();
+        //     }
+        // });
         //如果是文件导入组件，初始化tip，如果是禁用状态，那么禁用uploader并激活tip; 因为初始化了tip，所以如果没有禁用，那么禁用tip
         if (this.type === 'file'){
             this.initTip();
@@ -55,7 +55,7 @@ export default {
                 // this.enableUploader();
                 this.disableTip();
             }
-            this.refreshUploader();
+            // this.refreshUploader();
         }
     },
     methods: Object.assign(methods, upload),

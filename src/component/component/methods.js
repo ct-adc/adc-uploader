@@ -1,6 +1,11 @@
 import upload from './upload';
 import utility from 'ct-utility';
 export default {
+    pickerClick(event){
+        const lable = event.currentTarget.children[1].getElementsByTagName('label')[0];
+
+        lable.click();
+    },
     /**
      * 是否为已经完成上传的图片
      * @param status

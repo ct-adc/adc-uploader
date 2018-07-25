@@ -4,10 +4,10 @@
     z-index: -9999;
   }
   .webuploader-container {
-    div:nth-child(1) {
+    div:nth-child(2) {
       //固定尺寸后不用调用refresh刷新
-      width: 90px;
-      height: 30px;
+      width: 1px!important;
+      height:1px!important;
     }
   }
   .webuploader-element-invisible {

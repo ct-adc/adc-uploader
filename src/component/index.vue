@@ -3,7 +3,8 @@
         <div class="ct-adc-img-uploader" v-if="type==='img'">
             <ul class="file-list ct-adc-img-uploader-list" ref="root" :class="{'disabled-wrap': disabled}">
                 <li v-for="(thumb,index) in fileList"
-                    :style="{width:thumbnailWidth+'px',height:thumbnailHeight+'px'}">
+                    :style="{width:thumbnailWidth+'px',height:thumbnailHeight+'px'}" 
+                    :key="index">
                     <img :src="thumb.previewSrc"/>
 
                     <div class="thumbInfo text-center pending" v-if="isPendingFile(thumb.status)">
@@ -24,7 +25,8 @@
                 </li>
                 <li class="addThumb" ref="addThumb"
                     v-if="fileList.length<fileNumLimit"
-                    :style="{width:thumbnailWidth+'px',height:thumbnailHeight+'px'}">
+                    :style="{width:thumbnailWidth+'px',height:thumbnailHeight+'px'}" 
+                    v-on="{click: disabled ? null : pickerClick}">
                     <span class="glyphicon glyphicon-plus"></span>
                 </li>
             </ul>
@@ -63,7 +65,8 @@
                  style="display:inline-block"
                  :class="{'disabled-wrap': disabled}"
                  :data-placement="tip.direction"
-                 :data-original-title="tip.message">
+                 :data-original-title="tip.message" 
+                 v-on="{click: disabled ? null : pickerClick}">
                 <!--webuploader-container是后续上传插件往外层元素span上加入的类名，这里直接绑定到class上是为了避免后续dom渲染时保持span有该类-->
                 <i class="glyphicon glyphicon-import"></i>
                 <span class="title">{{ buttonText }}</span>

@@ -4,15 +4,15 @@ import utility from 'ct-utility';
 new Vue({
     el: '#app',
     data: {
-        show: false,
+        show: true,
         //importer特有属性
         buttonText: '上传文件',
         //组件公用的属性
         accept: {
-            extensions: 'xlsx',
-            mimeTypes: ''
+            extensions: 'zip',
+            mimeTypes: 'application/zip'
         },
-        auto: false,
+        auto: true,
         chunked: true,
         chunkSize: 5242880,
         chunkRetry: 2,
@@ -21,8 +21,8 @@ new Vue({
         duplicate: false,
         fileNumLimit: 2,
         files: [],
-        fileSingleSizeLimit: 4 * 1024,
-        fileSizeLimit: 10 * 1024,
+        fileSingleSizeLimit: 4000 * 1024,
+        fileSizeLimit: 1000000 * 1024,
         formData: {
             os: 1
         },

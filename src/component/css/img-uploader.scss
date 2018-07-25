@@ -1,4 +1,11 @@
 .ct-adc-img-uploader {
+  .webuploader-container {
+    div:nth-child(2) {
+      //固定尺寸后不用调用refresh刷新
+      width: 1px!important;
+      height:1px!important;
+    }
+  }
   .webuploader-pick {
     overflow: hidden;
     position: absolute;
