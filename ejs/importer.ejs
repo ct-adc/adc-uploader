@@ -19,6 +19,7 @@
                         v-show="show"
                       style="width:300px;"
                       type="file"
+                      :has-list="hasList"
                       :button-text="buttonText"
                       :accept="accept"
                       :auto="auto"
@@ -28,10 +29,7 @@
                       :compress="compress"
                       :disabled="disabled"
                       :duplicate="duplicate"
-                      :file-num-limit="fileNumLimit"
                       :files="files"
-                      :file-single-size-limit="fileSingleSizeLimit"
-                      :file-size-limit="fileSizeLimit"
                       :form-data="formData"
                       :file-val="fileVal"
                       :headers="headers"
@@ -46,6 +44,9 @@
                       @runtime-success="success"
                       @delete="deleteFile"
                       @change-status="change"></uploader>
+                      <!-- :file-num-limit="fileNumLimit"
+                      :file-single-size-limit="fileSingleSizeLimit"
+                      :file-size-limit="fileSizeLimit" -->
         </div>
         <div class="col-sm-1" v-if="!auto">
           <button class="btn btn-primary btn-sm" @click="upload">手动开始上传</button>

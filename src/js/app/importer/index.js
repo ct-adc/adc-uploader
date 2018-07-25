@@ -9,8 +9,8 @@ new Vue({
         buttonText: '上传文件',
         //组件公用的属性
         accept: {
-            extensions: 'zip',
-            mimeTypes: 'application/zip'
+            extensions: 'xlsx',
+            mimeTypes: ''
         },
         auto: false,
         chunked: true,
@@ -27,6 +27,7 @@ new Vue({
             os: 1
         },
         fileVal: 'file1',
+        hasList: false,
         headers: {
             contentType: 'application/json'
         },

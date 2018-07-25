@@ -1,5 +1,16 @@
 ## 更新日志
 
+### 1.0.0
+
+*todo*
+
+- 修复 修改fileNumLimit fileSingleSizeLimit fileSizeLimit的默认值为undefined，即不限
+
+- 新增 新增hasList属性 针对文件上传
+
+- 新增 在runtime-success时回传response，方便外部使用
+
+
 ### 1.0.0-alpha.3
 
 *2018-05-17*

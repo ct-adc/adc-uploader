@@ -106,7 +106,7 @@ export default {
                     return false;
                 }
             }
-            if (this.fileList.length >= this.fileNumLimit){
+            if (typeof this.fileNumLimit !=='undefined' && this.fileList.length >= this.fileNumLimit){
                 this.$emit('runtime-error', {
                     code: 'Q_EXCEED_NUM_LIMIT',
                     msg: ERRORS['Q_EXCEED_NUM_LIMIT']
@@ -125,7 +125,7 @@ export default {
                 if (item.file !== null && item.file.id === file.id) {
                     if (result.status) {
                         item.url = result.path;
-                        this.$emit('runtime-success');
+                        this.$emit('runtime-success', res);
                         this.$emit('runtime-error', {
                             code: 'RESET',
                             msg: ''

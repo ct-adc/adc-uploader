@@ -82,6 +82,7 @@ hasPreview | 是否需要预览 | Boolean | false | true/false | 是否需要预
 --- | --- | --- | --- | --- | ---- |
 tip | 禁用时提示文字 | String | '' | 文件 | disabled为true
 buttonText | 按钮文字 | String | '' | 任何文字 | 上传按钮上的文字
+hasList | 是否显示列表 | Boolean | true | false/true | 是否显示列表
 
 
 ### props.accept

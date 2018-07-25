@@ -29,6 +29,10 @@ export default{
         hasPreview: {
             type: Boolean,
             default: false
+        },
+        hasList: {
+            type: Boolean,
+            default: true
         }
     },
     computed: {

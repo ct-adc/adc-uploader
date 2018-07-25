@@ -53,7 +53,7 @@ export default {
     },
     fileList(newVal, oldVal){
         // pass
-        if (this.type === 'img' && newVal.length < oldVal.length && oldVal.length === this.fileNumLimit) {
+        if (this.type === 'img' && newVal.length < oldVal.length && (typeof this.fileNumLimit ==='undefined' || oldVal.length === this.fileNumLimit)) {
             this.$nextTick(() => {
                 this.uploader.addButton({
                     id: this.$refs.addThumb

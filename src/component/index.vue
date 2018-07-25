@@ -68,8 +68,8 @@
                 <i class="glyphicon glyphicon-import"></i>
                 <span class="title">{{ buttonText }}</span>
             </div>
-            <ul class="list text-muted">
-                <li v-for="(item, index) in fileList" :title="item.name">
+            <ul class="list text-muted" v-if="hasList">
+                <li v-for="(item, index) in fileList" :title="item.name" :key="index">
                     <span class="glyphicon glyphicon-file"></span>
                     {{item.name}}
                     <span v-if="item.status === ''" class="glyphicon glyphicon-hourglass"></span>

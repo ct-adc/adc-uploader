@@ -44,8 +44,7 @@ export default{
     },
     //文件数量限制
     fileNumLimit: {
-        type: Number,
-        default: 5
+        type: Number
     },
     //初始文件列表，每一项为一个图片在服务器上的地址
     files: {
@@ -56,13 +55,11 @@ export default{
     },
     //单个文件的大小限制
     fileSingleSizeLimit: {
-        type: Number,
-        default: 2 * 1024 * 1024
+        type: Number
     },
     //文件整体大小限制
     fileSizeLimit: {
-        type: Number,
-        default: 10 * 1024 * 1024
+        type: Number
     },
     //设置文件上传域的name
     fileVal: {
