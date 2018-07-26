@@ -1,4 +1,8 @@
 .ct-adc-importer {
+  .disabled-wrap{
+    opacity: 0.6;
+    pointer-events: none;
+  }
   .disabled-wrap label {
     position: absolute;
     z-index: -9999;
@@ -42,13 +46,13 @@
       margin-right: 5px;
     }
   }
-  .webuploader-pick-hover {
+  .webuploader-pick:hover {
     background: #00a2d4;
   }
-  .webuploader-pick-disable {
-    opacity: 0.6;
-    pointer-events: none;
-  }
+  // .webuploader-pick-disable {
+  //   opacity: 0.6;
+  //   pointer-events: none;
+  // }
   .list {
     list-style: none;
     margin: 0;

@@ -2,7 +2,7 @@
 
 ### 1.0.0
 
-*todo*
+*2018-07-28*todo
 
 - 修复 修改fileNumLimit fileSingleSizeLimit fileSizeLimit的默认值为undefined，即不限
 
@@ -10,6 +10,9 @@
 
 - 新增 在runtime-success时回传response，方便外部使用
 
+- 优化 取消尺寸检测更新lable，使用触发lable的click事件。其中hover效果的样式也有改动
+
+- 新增 新增type为file时的按钮loading效果，在loading时disable按钮
 
 ### 1.0.0-alpha.3
 

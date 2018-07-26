@@ -61,5 +61,8 @@ export default {
             }
         });
         return files;
+    },
+    loading(){
+        return this.pendingFiles.length > 0;
     }
 };

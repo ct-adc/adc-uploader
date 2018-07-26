@@ -26,8 +26,8 @@ module.exports = {
     define: {
         isProxy: true,
         matchPath: /\/api/i,
-        // domain: "http://tcysystinker.admin.ct108.org:1505"
-        domain: 'http://tgy365.admin.ct108.org:1506'
+        domain: "http://tcysystinker.admin.ct108.org:1505"
+        // domain: 'http://tgy365.admin.ct108.org:1506'
     },
     interFaces: interFaces,
     getInterFace(key){

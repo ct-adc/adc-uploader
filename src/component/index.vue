@@ -63,7 +63,8 @@
         <div class="ct-adc-importer" v-if="type==='file'">
             <div ref="root"
                  style="display:inline-block"
-                 :class="{'disabled-wrap': disabled}"
+                 class="webuploader-container"
+                 :class="{'disabled-wrap': disabled || loading}"
                  :data-placement="tip.direction"
                  :data-original-title="tip.message" 
                  v-on="{click: disabled ? null : pickerClick}">
