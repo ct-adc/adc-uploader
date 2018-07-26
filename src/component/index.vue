@@ -24,7 +24,7 @@
                     </div>
                 </li>
                 <li class="addThumb" ref="addThumb"
-                    v-if="fileList.length<fileNumLimit"
+                    v-if="typeof fileNumLimit === 'undefined' || fileList.length<fileNumLimit"
                     :style="{width:thumbnailWidth+'px',height:thumbnailHeight+'px'}" 
                     v-on="{click: disabled ? null : pickerClick}">
                     <span class="glyphicon glyphicon-plus"></span>
