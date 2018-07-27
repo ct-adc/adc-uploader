@@ -27,7 +27,7 @@
                       :disabled="disabled"
                       :duplicate="duplicate"
                       :file-num-limit="fileNumLimit"
-                      :files="files"
+                      :files="fileNumLimit === 1 ? files : []"
                       :file-single-size-limit="fileSingleSizeLimit"
                       :file-size-limit="fileSizeLimit"
                       :form-data="formData"
@@ -45,7 +45,8 @@
                       @runtime-error="error"
                       @runtime-success="success"
                       @delete="deleteFile"
-                      @change-status="change"></uploader>
+                      @change-status="change" ></uploader>
+                      
         </div>
         <div class="col-sm-1" v-if="!auto">
             <button class="btn btn-primary btn-sm" @click="upload">手动开始上传</button>

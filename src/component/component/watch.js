@@ -125,12 +125,14 @@ export default {
         this.uploader.option('fileVal', newVal);
     },
     loading(newVal){
-        const button = this.$refs.root.getElementsByClassName('webuploader-pick')[0];
+        if (this.type === 'file'){
+            const button = this.$refs.root.getElementsByClassName('webuploader-pick')[0];
         
-        if (newVal){
-            button.innerHTML = '<i class="glyphicon glyphicon-refresh rotate"></i> <span class="title">上传文件中</span>';
-        } else {
-            button.innerHTML = '<i class="glyphicon glyphicon-import"></i> <span class="title">上传文件</span>'
+            if (newVal){
+                button.innerHTML = '<i class="glyphicon glyphicon-refresh rotate"></i> <span class="title">上传文件中</span>';
+            } else {
+                button.innerHTML = '<i class="glyphicon glyphicon-import"></i> <span class="title">' + this.buttonText + '</span>'
+            }
         }
     }
 };

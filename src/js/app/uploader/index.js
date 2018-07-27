@@ -11,15 +11,15 @@ new Vue({
             extensions: 'jpg,jpeg',
             mimeTypes: 'image/jpeg,image/jpg'
         },
-        auto: false,
+        auto: true,
         chunked: true,
         chunkSize: 5242880,
         chunkRetry: 2,
         compress: false,
         disabled: false,
         duplicate: false,
-        fileNumLimit: 2,
-        files: [],
+        fileNumLimit: 1,
+        files: ['https://dummyimage.com/250x250'],
         fileSingleSizeLimit: 40 * 1024 * 1024,
         fileSizeLimit: 10 * 1024 * 1024,
         formData: {
@@ -32,20 +32,25 @@ new Vue({
         method: 'POST',
         multiple: false,
         resultFilter(res){
-            res = utility.objTransfer.lowerKey(res);
-
-            if (res.code === 0){
-                return {
-                    status: true,
-                    path: res.data,
-                    msg: ''
-                };
-            }
             return {
-                status: false,
-                path: '',
-                msg: res.message
+                status: true,
+                path: res.data,
+                msg: ''
             };
+            // res = utility.objTransfer.lowerKey(res);
+
+            // if (res.code === 0){
+            //     return {
+            //         status: true,
+            //         path: res.data,
+            //         msg: ''
+            //     };
+            // }
+            // return {
+            //     status: false,
+            //     path: '',
+            //     msg: res.message
+            // };
         },
         tip: {
             message: '错误提示',
@@ -69,7 +74,7 @@ new Vue({
             // type: 'image/jpeg'
         },
         sendAsBinary: false,
-        server: '/api/common/uploadpic',
+        server: '/mock/221/api/common/uploadimg',
         threads: 3,
         hasPreview: false,
         show: false
