@@ -2,7 +2,7 @@
 
 ### 1.0.0
 
-*2018-07-28*todo
+*2018-07-27*
 
 - 修复 修改fileNumLimit fileSingleSizeLimit fileSizeLimit的默认值为undefined，即不限
 
