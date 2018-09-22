@@ -17,7 +17,8 @@ export default {
             previewStatus: false, // 预览生成状态
             previewSrc: '', // 预览生成后的image data
             url: '', // 上传到服务器后的返回地址
-            name: file.name // 文件名
+            name: file.name, // 文件名
+            valid: false
         };
 
         // 如果是图片上传才启用生成缩略图
@@ -113,6 +114,30 @@ export default {
                 });
                 return false;
             }
+            // 因为图片尺寸是异步获取的，故不能通过return false来阻止加入队列，故只能在加入队列之后做删除操作。
+            const i = setTimeout((function(){
+                if (this.type === 'img'){
+                    var width = file._info.width;
+                    var height = file._info.height;
+                    const widthOK = this.acceptWidth === 0 || width === this.acceptWidth;
+                    const heightOK = this.acceptHeight === 0 || height === this.acceptHeight;
+                    if (!widthOK || !heightOK){
+                        this.$emit( 'runtime-error', {
+                            code: 'F_Q_EXCEED_WH_LIMIT',
+                            msg: ERRORS['F_Q_EXCEED_WH_LIMIT']
+                        });
+                        // 如果宽高不符合要求，则valid保持false的值，那么用户将无法看到该图片，此时需默默删除图片（从队列和fileList中均删除该图片）
+                        this.uploader.removeFile(file);
+                        this.removeFile(this.fileList.length - 1);
+                    } else {
+                        clearTimeout(i);
+                        this.fileList[this.fileList.length - 1].valid = true;
+                    }
+                } else {
+                    clearTimeout(i);
+                    this.fileList[this.fileList.length - 1].valid = true;
+                }
+            }).bind(this), 100);
             return true;
         }.bind(this));
         this.uploader.on('fileQueued', function(file){

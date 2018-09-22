@@ -71,6 +71,8 @@ threads | 上传并发数 | Number | 3 | 整数 | 允许同时最大上传进程
 
 参数|说明|类型|默认值 | 可选值 | 描述 |
 --- | --- | --- | --- | --- | ---- |
+acceptWidth | 允许的图片的宽度 | Number | 0（不限制） | 任意非负整数 | 允许的图片的宽度
+acceptHeight | 允许的图片的高度 | Number | 0（不限制） | 任意非负整数 | 允许的图片的高度
 thumbnailWidth | 生成缩略图的宽度 | Number | 110 | | 图片列表中每个图片缩略图的宽度
 thumbnailHeight | 生成缩略图的高度 | Number | 110 | | 图片列表中每个图片缩略图的宽度
 thumb[详细说明](#propsthumb) | 生成缩略图的规则 | Object| {width: 110,height: 110,quality: 70,allowMagnify: true,crop: true,type: ''}| 详细说明 | 图片上传时缩略图生成规则

@@ -19,7 +19,7 @@ new Vue({
         disabled: false,
         duplicate: false,
         fileNumLimit: 1,
-        files: ['https://dummyimage.com/250x250'],
+        files: [],
         fileSingleSizeLimit: 40 * 1024 * 1024,
         fileSizeLimit: 10 * 1024 * 1024,
         formData: {

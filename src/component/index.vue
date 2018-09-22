@@ -2,27 +2,33 @@
     <div class="ct-adc-uploader-wrap">
         <div class="ct-adc-img-uploader" v-if="type==='img'">
             <ul class="file-list ct-adc-img-uploader-list" ref="root" :class="{'disabled-wrap': disabled}">
-                <li v-for="(thumb,index) in fileList"
-                    :style="{width:thumbnailWidth+'px',height:thumbnailHeight+'px'}" 
-                    :key="index">
-                    <img :src="thumb.previewSrc"/>
+                <template v-for="(thumb,index) in fileList">
+                    <li v-if="thumb.valid !== false" :style="{width:thumbnailWidth+'px',height:thumbnailHeight+'px'}" 
+                        :key="index">
+                        <img :src="thumb.previewSrc"/>
 
-                    <div class="thumbInfo text-center pending" v-if="isPendingFile(thumb.status)">
-                        <span class="glyphicon glyphicon-refresh rotate"></span>
-                    </div>
-                    <div class="thumbInfo text-center success" v-if="isCompleteFile(thumb.status)">
-                        <span class="glyphicon glyphicon-ok"></span>
-                    </div>
-                    <div class="thumbInfo text-center error" v-if="isErrorFile(thumb.status)">
-                        <span class="glyphicon glyphicon-remove"></span>
-                    </div>
-                    <div class="file-panel">
-                        <div>
-                            <span class="glyphicon glyphicon-search" @click="preview(index)" v-if="hasPreview"></span>
-                            <span class="glyphicon glyphicon-trash" @click="removeFile(index)"></span>
+                        <div class="thumbInfo text-center pending" v-if="isPendingFile(thumb.status)">
+                            <span class="glyphicon glyphicon-refresh rotate"></span>
                         </div>
-                    </div>
-                </li>
+                        <div class="thumbInfo text-center success" v-if="isCompleteFile(thumb.status)">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </div>
+                        <div class="thumbInfo text-center error" v-if="isErrorFile(thumb.status)">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </div>
+                        <div class="file-panel">
+                            <div>
+                                <span class="glyphicon glyphicon-search" @click="preview(index)" v-if="hasPreview"></span>
+                                <span class="glyphicon glyphicon-trash" @click="removeFile(index)"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- valid为false时，从外观来看，该li保持添加图片的状态，即屏蔽掉图片列表状态-->
+                    <li v-else class="addThumb" :key="index"
+                        :style="{width:thumbnailWidth+'px',height:thumbnailHeight+'px'}">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </li>
+                </template>
                 <li class="addThumb" ref="addThumb"
                     v-if="typeof fileNumLimit === 'undefined' || fileList.length<fileNumLimit"
                     :style="{width:thumbnailWidth+'px',height:thumbnailHeight+'px'}" 

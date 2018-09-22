@@ -21,6 +21,14 @@ export default{
                 }
             }
         },
+        acceptWidth: {
+            type: Number,
+            default: 0
+        },
+        acceptHeight: {
+            type: Number,
+            default: 0
+        },
         //
         buttonText: {
             type: String,
